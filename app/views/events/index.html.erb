@@ -1,0 +1,130 @@
+<html>
+<head>
+<! include the stylesheets from bootstrap>
+  <%= stylesheet_link_tag 'bootstrap.min.css' %> 
+  <%= javascript_include_tag 'bootstrap.min.js' %>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,700' rel='stylesheet' type='text/css'>
+  <title></title>
+
+</head>
+
+<body>
+  
+  <div class="span9 offset2">  
+    <h1><b>Listing events</b></h1><br /><br />      
+    <% @events.each do |event| %>
+    <div class="span4">    
+      <div class="thumbnail">      
+        <div class="caption">        
+          <h4><%= link_to event.name, event %></h4>
+          <i><%= event.date %></i> 
+          <p><%= event.description%></p>
+            <p><a href="#" class="btn btn-primary">Follow</a> </p>     
+          </div>    
+        </div>  
+      </div>    
+      <% end %>
+    </div>  <br/><br/>
+    <%= link_to 'New Event', new_event_path %>
+  </div>
+
+  
+   
+ 
+         
+  
+</body>
+</html>
+
+
+<!-- OLDER VERSION 
+<html>
+<head>
+<! include the stylesheets from bootstrap>
+  <%= stylesheet_link_tag 'bootstrap.min.css' %> 
+  <%= javascript_include_tag 'bootstrap.min.js' %>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,700' rel='stylesheet' type='text/css'>
+  <title></title>
+
+</head>
+
+<body>
+  <!--
+  <div class="span8 offset2">
+    <h1><b>Listing events</b></h1><br />
+    <br />
+
+    <div class="row">
+      <% @events.each do |event| %>
+
+      <div class="span4">
+        <h3><%= link_to event.name, event %></h3>
+
+        <p><i><%= event.date %></i></p>
+
+        <p><%= event.description %></p>
+
+        
+        <div class="input-append">                                
+          <a class="btn btn-primary">Follow </a>
+        </div>
+      </div>
+      <% end %>
+    </div><br />
+    <%= link_to 'New Event', new_event_path %>
+  </div>
+  
+  <br/><br/>
+ 
+ 
+ 
+<div id="demo" class="collapse in"> DEMOOOOOo </div>
+  
+  <div class = "span8 offset2">  
+    <h1><b>Listing events</b></h1><br/>
+    <div class="span8">
+      <% @events.each do |event| %>
+      <!div class="accordion" id="accordion1">
+        <div class="accordion-group">
+          <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion0" href="#collapseOne">
+            <h3><%= event.name %></h3>
+            <p>
+              <%= event.date %> <a class="btn btn-primary">Follow This Event </a> 
+            </p>
+          </a>
+        </div>
+        <div id="collapseOne" class="accordion-body collapse in">
+          <div class="accordion-inner">
+            Event Organized by <%= event.organizer %>
+            <h4>Description</h4>
+            <p><%= event.description %></p>
+      			<h4>Other Information></h4>
+            <p><%= event.info %></p>
+          </div>
+        </div>
+        
+       </div>
+      <br/>
+         
+      <!/div>
+        <%end%>
+      
+  
+  
+    
+    </div>
+  </div>
+  
+  
+       
+
+      
+  
+
+  
+  
+  </div>  
+</body>
+</html>
+-->

@@ -1,0 +1,55 @@
+<head>
+<! include the stylesheets from bootstrap>
+  <%= stylesheet_link_tag 'bootstrap.min.css' %> 
+  <%= javascript_include_tag 'bootstrap.min.js' %>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,700' rel='stylesheet' type='text/css'>
+  
+
+</head>
+<div class = "span8 offset2"> 
+  <br/><br/>
+
+  <p align = "right"> <a class="btn btn-primary">Follow This Event </a></p>
+  <h1><%= @event.name %></h1>
+  <h4><%= @event.date %> </h4>
+  <p><%= @event.organizer %></p>
+       
+
+  
+  
+  <div class="accordion" id="accordion1">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        <h4>Description</h4>
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        <%= @event.description %>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+        <h4>Other Information</h4>
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <%= @event.info %>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  
+  
+  </div>
+  <!--
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
+-->
+  
